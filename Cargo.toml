@@ -1,0 +1,20 @@
+[package]
+name = "soundcore-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.36.2"
+egui = "0.36.2"
+openscq30-lib = { git = "https://github.com/Oppzippy/OpenSCQ30", rev = "bc77a29" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+dirs = "5"
+macaddr = "1"
+anyhow = "1"
+
+[profile.release-fast]
+inherits = "release"
+opt-level = 2
+codegen-units = 16
+lto = false
+debug = false
